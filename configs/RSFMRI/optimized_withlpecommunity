@@ -1,0 +1,52 @@
+{
+    "gpu": {
+        "use": true,
+        "id": 1
+    },
+    
+    "model": "GraphTransformer",
+    "dataset": "ABCD",
+    
+    "out_dir": "out/ABCD/full/1e-5/node/",
+    
+    "params": {
+        "seed": 41,
+        "epochs": 50,
+        "batch_size": 64,
+        "init_lr": 0.00002,
+        "lr_reduce_factor": 0.2,
+        "lr_schedule_patience": 20,
+        "min_lr": 1e-8,
+        "weight_decay": 1.35e-11,
+        "print_epoch_interval": 5,
+        "max_time": 24
+    },
+    
+    "net_params": {
+        "full_graph": false,
+        "gamma": 1.0e-05,
+
+        "LPE": "community",
+        "m": 10,
+        "LPE_layers": 2,
+        "LPE_dim": 10,
+        "LPE_n_heads": 4,
+
+        "GT_layers":3 ,
+        "GT_hidden_dim": 64,
+        "GT_out_dim": 64,
+        "GT_n_heads": 16,
+
+        "residual": true,
+        "readout": "mean",
+        "in_feat_dropout": 0.0,
+        "dropout": 0.2,
+        "ratio": 0.5,
+        "num_fc_layers": 2,
+        "fc_dim1": 512,
+        "fc_dim2": 256,
+        "layer_norm": false,
+        "batch_norm": false,
+        "use_quantization": false
+    }
+}
